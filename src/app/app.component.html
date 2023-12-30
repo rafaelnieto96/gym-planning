@@ -1,26 +1,41 @@
-<div class="toolbar" role="banner">
-    <!-- Your toolbar content -->
-  </div>
-  
-  <div class="content" role="main">
+<div class="content" role="main">
     <app-weekly-calendar (squareClicked)="openExamplePopup()"></app-weekly-calendar>
-  </div>
-  
-  
-<!-- Popup for Example -->
+</div>
+
 <div class="modal" tabindex="-1" role="dialog" id="examplePopup">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Example Popup</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeExamplePopup()">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Exercise</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exerciseName">Name</label>
+                        <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseRepetitions">Repetitions</label>
+                        <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseWeight">Weight</label>
+                        <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseMachine">Machine</label>
+                        <select class="form-control" id="exerciseMachine">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <!-- You might want to add validation, additional fields, or UI elements based on your requirements -->
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>This is an example popup.</p>
-        </div>
-      </div>
     </div>
-  </div>
-  
+</div>
