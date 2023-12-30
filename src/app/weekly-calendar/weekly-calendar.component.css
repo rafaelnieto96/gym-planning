@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+.calendar-background {
+    background: rgba(0, 0, 0, .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calendar-container {
+    background: #1D252C;
+    color: #fff;
+    padding: 40px 60px;
+    text-align: center;
+
+}
+
+.day-title,
+.day-content {
+    display: flex;
+}
+
+.day {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.square {
+    flex: 1;
+    height: 600px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    margin: 0.5px;
+}
+
+h3 {
+    font-size: 37px;
+    font-weight: 900;
+    margin: 0 0 1rem;
+}
+

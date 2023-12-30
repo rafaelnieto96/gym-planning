@@ -1,0 +1,17 @@
+<div class="calendar-background">
+    <div class="calendar-container">
+        <h3>GYM PLANNING</h3>
+        <div id="calendar">
+            <div class="placeholder"></div>
+            <div class="calendar-events">
+            </div>
+        </div>
+        <div class="day-title">
+            <div class="day" *ngFor="let day of days">{{ day }}</div>
+        </div>
+
+        <div class="day-content">
+            <div class="square" *ngFor="let day of days"></div>
+        </div>
+    </div>
+</div>
