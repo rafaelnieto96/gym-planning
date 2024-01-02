@@ -1,5 +1,5 @@
 <div class="content" role="main">
-    <app-weekly-calendar (squareClicked)="openExamplePopup()"></app-weekly-calendar>
+    <app-weekly-calendar (squareClicked)="openExamplePopup()" [exercises]="exerciseDetails"></app-weekly-calendar>
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="examplePopup">

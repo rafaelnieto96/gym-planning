@@ -50,3 +50,15 @@ h3 {
     margin: 0 0 1rem;
 }
 
+/* ToDo:delete */
+.exercises {
+    display: flex;
+    flex-direction: column;
+  }
+  
+/* ToDo:delete */
+  .exercise {
+    border: 1px solid #b90909;
+    margin-bottom: 5px;
+    padding: 5px;
+  }

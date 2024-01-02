@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { WeeklyCalendarComponent } from './weekly-calendar/weekly-calendar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DayFilterPipe } from './pipes/day-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeeklyCalendarComponent
+    WeeklyCalendarComponent,
+    DayFilterPipe
   ],
   imports: [
     FormsModule,

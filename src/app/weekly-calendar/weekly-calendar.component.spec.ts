@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WeeklyCalendarComponent } from './weekly-calendar.component';
 
 describe('WeeklyCalendarComponent', () => {
