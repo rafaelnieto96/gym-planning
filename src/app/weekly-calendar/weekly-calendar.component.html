@@ -16,7 +16,7 @@
 
                 <!-- Monday -->
                 <div class="day-content">
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Monday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -28,7 +28,7 @@
                     </div>
 
                     <!-- Tuesday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Tuesday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Tuesday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>

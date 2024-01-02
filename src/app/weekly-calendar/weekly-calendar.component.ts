@@ -9,11 +9,12 @@ export class WeeklyCalendarComponent {
 
     days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-    @Input() exercises: any[] = []; // Ensure 'exercises' is of the appropriate type
+    @Input() exercises: any[] = [];
 
     @Output() squareClicked: EventEmitter<any> = new EventEmitter();
 
-    openPopupOnClick() {
-        this.squareClicked.emit();
-    }
+    openPopupOnClick(day: string): void {
+        this.squareClicked.emit(day);
+      }
+    
 }
