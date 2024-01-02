@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ExerciseService } from './exercise.service';
 
 @Component({
   selector: 'app-root',
@@ -8,28 +8,43 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  constructor(private http: HttpClient) {}
+  exerciseDetails: any = null;
+  exerciseToUpdate = {
+    id: '',
+    name: '',
+    weight: '',
+    repetitions: '',
+    machine: ''
+  };
 
-  closeExamplePopup() {
+  constructor(private exerciseService: ExerciseService) {
+    this.getExercises();
+  }
+
+  // Function to close the modal
+  closeExamplePopup(): void {
     const examplePopup = document.getElementById('examplePopup');
     if (examplePopup) {
       examplePopup.style.display = 'none';
     }
   }
 
-  openExamplePopup() {
+  // Function to open the modal
+  openExamplePopup(): void {
     const examplePopup = document.getElementById('examplePopup');
     if (examplePopup) {
       examplePopup.style.display = 'block';
     }
   }
 
-  openPopupOnClick() {
+  // Function triggered on square click
+  openPopupOnClick(): void {
     this.openExamplePopup();
   }
-  
-  createExercise(event: Event) {
-    event.preventDefault(); // Prevent default form submission behavior
+
+  // Function to handle form submission (creating an exercise)
+  createExercise(event: Event): void {
+    event.preventDefault();
 
     const exerciseData = {
       name: (document.getElementById('exerciseName') as HTMLInputElement).value,
@@ -38,14 +53,60 @@ export class AppComponent {
       machine: (document.getElementById('exerciseMachine') as HTMLSelectElement).value === 'true'
     };
 
-    this.http.post<any>('http://localhost:8080/api/exercises', exerciseData)
-      .subscribe((response) => {
-        console.log('Exercise created:', response);
-        this.closeExamplePopup(); // Close modal on successful submission
-      }, (error) => {
-        console.error('Error creating exercise:', error);
-        // Handle error, display error message, etc.
-      });
+    this.exerciseService.postExercise(exerciseData).subscribe(
+      (resp) => {
+        console.log('Exercise created:', resp);
+        this.getExercises(); // Update the exercise list after a successful creation
+        this.closeExamplePopup(); // Close the modal after creating the exercise
+      },
+      (err) => {
+        console.error('Error creating exercise:', err);
+      }
+    );
   }
-  
+
+  // Function to retrieve all exercises
+  getExercises(): void {
+    this.exerciseService.getExercises().subscribe(
+      (resp) => {
+        console.log('Exercises:', resp);
+        this.exerciseDetails = resp;
+      },
+      (err) => {
+        console.error('Error fetching exercises:', err);
+      }
+    );
+  }
+
+  // Function to delete an exercise
+  deleteExercise(exercise: any): void {
+    this.exerciseService.deleteExercise(exercise.id).subscribe(
+      () => {
+        console.log('Exercise deleted');
+        this.getExercises(); // Refresh the exercise list after deletion
+      },
+      (err) => {
+        console.error('Error deleting exercise:', err);
+      }
+    );
+  }
+
+  edit(exercise: any): void {
+    this.exerciseToUpdate = exercise;
+  }
+
+  updateExercise(): void {
+    this.exerciseService.updateExercise(this.exerciseToUpdate.id, this.exerciseToUpdate).subscribe(
+      (resp) => {
+        console.log('Exercise updated:', resp);
+      },
+      (err) => {
+        console.error('Error updating exercise:', err);
+      }
+    );
+  }
+
+
+
+
 }
