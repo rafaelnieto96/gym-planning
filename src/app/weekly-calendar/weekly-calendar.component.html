@@ -14,9 +14,10 @@
                     <div class="day">Sunday</div>
                 </div>
 
+                <!-- Monday -->
                 <div class="day-content">
-                    <div *ngFor="let day of days" class="square">
-                        <div *ngFor="let exercise of exercises | dayFilter: day" class="exercise">
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
@@ -25,8 +26,83 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tuesday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Tuesday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Wednesday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Thursday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Friday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saturday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Saturday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sunday -->
+                    <div class="square">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Sunday'" class="exercise">
+                            <div class="exercise-details">
+                                <div class="name">{{ exercise.name }}</div>
+                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
+                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                                <div class="exercise_day">Day: {{ exercise.day }}</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                
+
+
+
+            </div>
         </div>
     </div>
-</div>
