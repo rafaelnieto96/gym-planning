@@ -16,6 +16,12 @@ export class WeeklyCalendarComponent {
 
     @Output() squareClicked: EventEmitter<any> = new EventEmitter();
 
+    handleSquareClick(event: MouseEvent, day: string) {
+        if ((event.target as HTMLElement).classList.contains('square')) {
+            this.openPopupOnClick(day);
+        }
+    }
+
     openPopupOnClick(day: string): void {
         this.squareClicked.emit(day);
     }
@@ -31,5 +37,5 @@ export class WeeklyCalendarComponent {
             }
         );
     }
-    
+
 }
