@@ -1,6 +1,11 @@
 <div class="calendar-background">
     <div class="calendar-container">
-        <h3>GYM PLANNING</h3>
+        <div class="header">
+            <h3>GYM PLANNING</h3>
+            <div class="delete-btn">
+                <button (click)="deleteAllExercises()">Delete All</button>
+            </div>
+        </div>
         <div id="calendar">
             <div class="placeholder"></div>
             <div class="calendar-events">
@@ -22,7 +27,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -34,7 +38,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -46,7 +49,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -58,7 +60,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -70,7 +71,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>
@@ -94,7 +93,6 @@
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
                                 <div class="weight">Weight: {{ exercise.weight }}</div>
-                                <div class="exercise_day">Day: {{ exercise.day }}</div>
                             </div>
                         </div>
                     </div>

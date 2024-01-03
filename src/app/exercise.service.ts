@@ -10,7 +10,7 @@ export class ExerciseService {
 
     constructor(private http: HttpClient) { }
 
-    public postExercise(exercise: any){
+    public postExercise(exercise: any) {
         return this.http.post(this.apiUrl, exercise);
     }
 
@@ -20,10 +20,14 @@ export class ExerciseService {
 
     public deleteExercise(id: any) {
         return this.http.delete(this.apiUrl + '/?id=' + id);
-      }
-    
-      public updateExercise(id: any, exercise: any) {
+    }
+
+    public updateExercise(id: any, exercise: any) {
         return this.http.put(this.apiUrl + '/?id=' + id, exercise);
-      }
+    }
+
+    public deleteAllExercises() {
+        return this.http.delete(this.apiUrl + '/deleteAll');
+    }
 }
 

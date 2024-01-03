@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { ExerciseService } from '../exercise.service';
 
 @Component({
     selector: 'app-weekly-calendar',
@@ -6,6 +7,8 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
     styleUrls: ['./weekly-calendar.component.css'],
 })
 export class WeeklyCalendarComponent {
+
+    constructor(private exerciseService: ExerciseService) { }
 
     days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -16,4 +19,17 @@ export class WeeklyCalendarComponent {
     openPopupOnClick(day: string): void {
         this.squareClicked.emit(day);
     }
+
+    deleteAllExercises(): void {
+        this.exercises = [];
+        this.exerciseService.deleteAllExercises().subscribe(
+            () => {
+                console.log('All exercises deleted successfully.');
+            },
+            (error) => {
+                console.error('Error deleting exercises:', error);
+            }
+        );
+    }
+    
 }
