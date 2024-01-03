@@ -16,6 +16,7 @@ export class WeeklyCalendarComponent {
     @Input() exercises: any[] = [];
 
     @Output() squareClicked: EventEmitter<any> = new EventEmitter();
+    @Output() exerciseClicked: EventEmitter<any> = new EventEmitter();
 
     handleSquareClick(event: MouseEvent, day: string) {
         if ((event.target as HTMLElement).classList.contains('square')) {
@@ -25,6 +26,10 @@ export class WeeklyCalendarComponent {
 
     openPopupOnClick(day: string): void {
         this.squareClicked.emit(day);
+    }
+
+    openEditExercisePopup(exercise: any): void {
+        this.exerciseClicked.emit(exercise);
     }
 
     deleteAllExercises(): void {
@@ -56,15 +61,5 @@ export class WeeklyCalendarComponent {
     deleteExercise(exercise: any) {
         console.log('Delete clicked for exercise:', exercise);
     }
-
-    openEditExercisePopup(exercise: any): void {
-        this.selectedExercise = exercise;
-        const editPopup = document.getElementById('editExercisePopup');
-        if (editPopup) {
-            editPopup.style.display = 'block';
-        }
-    }
-
-
 
 }

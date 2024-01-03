@@ -1,5 +1,5 @@
 <div class="content" role="main">
-    <app-weekly-calendar (squareClicked)="openExamplePopup($event)" [exercises]="exerciseDetails"></app-weekly-calendar>
+    <app-weekly-calendar (squareClicked)="openExamplePopup($event)" (exerciseClicked)="openEditExercisePopup($event)" [exercises]="exerciseDetails"></app-weekly-calendar>
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="examplePopup">
@@ -39,7 +39,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal" tabindex="-1" role="dialog" id="editExercisePopup">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -50,25 +49,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!--ToDo:Change this-->
                 <form (submit)="createExercise()">
                     <div class="form-group">
                         <label for="exerciseName">Name</label>
-                        <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name">
+                        <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name"
+                            [(ngModel)]="selectedExercise.name" name="exerciseName">
                     </div>
                     <div class="form-group">
                         <label for="exerciseRepetitions">Repetitions</label>
-                        <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions">
+                        <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions"
+                            [(ngModel)]="selectedExercise.repetitions" name="exerciseRepetitions">
                     </div>
                     <div class="form-group">
                         <label for="exerciseWeight">Weight</label>
-                        <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight">
+                        <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight"
+                            [(ngModel)]="selectedExercise.weight" name="exerciseWeight">
                     </div>
                     <div class="form-group">
                         <label for="exerciseMachine">Machine</label>
-                        <select class="form-control" id="exerciseMachine">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
+                        <select class="form-control" id="exerciseMachine" [(ngModel)]="selectedExercise.machine"
+                            name="exerciseMachine">
+                            <option [ngValue]="true">Yes</option>
+                            <option [ngValue]="false">No</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Confirm</button>

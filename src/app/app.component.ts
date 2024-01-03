@@ -8,6 +8,7 @@ import { ExerciseService } from './exercise.service';
 })
 export class AppComponent {
     selectedDay: string = '';
+    selectedExercise: any = '';
 
     exerciseDetails: any = null;
     exerciseToUpdate = {
@@ -57,6 +58,14 @@ export class AppComponent {
                 console.error('Error creating exercise:', err);
             }
         );
+    }
+
+    openEditExercisePopup(exercise: any): void {
+        this.selectedExercise = exercise;
+        const examplePopup = document.getElementById('editExercisePopup');
+        if (examplePopup) {
+            examplePopup.style.display = 'block';
+        }
     }
 
     getExercises(): void {
