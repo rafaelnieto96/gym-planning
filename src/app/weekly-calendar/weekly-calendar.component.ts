@@ -38,4 +38,22 @@ export class WeeklyCalendarComponent {
         );
     }
 
+    toggleExerciseButtons(exercise: any) {
+        exercise.showButtons = !exercise.showButtons;
+
+        this.exercises.forEach((ex: any) => {
+            if (ex !== exercise) {
+                ex.showButtons = false;
+            }
+        });
+    }
+
+    editExercise(exercise: any) {
+        console.log('Edit clicked for exercise:', exercise);
+    }
+
+    deleteExercise(exercise: any) {
+        console.log('Delete clicked for exercise:', exercise);
+    }
+
 }
