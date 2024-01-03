@@ -15,6 +15,5 @@ export class WeeklyCalendarComponent {
 
     openPopupOnClick(day: string): void {
         this.squareClicked.emit(day);
-      }
-    
+    }
 }

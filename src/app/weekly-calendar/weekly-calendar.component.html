@@ -40,7 +40,7 @@
                     </div>
 
                     <!-- Wednesday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Wednesday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Wednesday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -52,7 +52,7 @@
                     </div>
 
                     <!-- Thursday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Thursday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Thursday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- Friday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Friday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Friday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -76,7 +76,7 @@
                     </div>
 
                     <!-- Saturday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Saturday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Saturday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -88,7 +88,7 @@
                     </div>
 
                     <!-- Sunday -->
-                    <div class="square">
+                    <div class="square" (click)="openPopupOnClick('Sunday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Sunday'" class="exercise">
                             <div class="exercise-details">
                                 <div class="name">{{ exercise.name }}</div>
@@ -100,8 +100,6 @@
                     </div>
 
                 </div>
-
-
 
             </div>
         </div>

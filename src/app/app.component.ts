@@ -7,6 +7,7 @@ import { ExerciseService } from './exercise.service';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    selectedDay: string = '';
 
     exerciseDetails: any = null;
     exerciseToUpdate = {
@@ -29,20 +30,21 @@ export class AppComponent {
     }
 
     openExamplePopup(day: string): void {
+        this.selectedDay = day;
         const examplePopup = document.getElementById('examplePopup');
         if (examplePopup) {
             examplePopup.style.display = 'block';
         }
     }
 
-    createExercise(day: string): void {
+    createExercise(): void {
         console.log('event:', event);
         const exerciseData = {
             name: (document.getElementById('exerciseName') as HTMLInputElement).value,
             repetitions: parseInt((document.getElementById('exerciseRepetitions') as HTMLInputElement).value, 10),
             weight: parseFloat((document.getElementById('exerciseWeight') as HTMLInputElement).value),
             machine: (document.getElementById('exerciseMachine') as HTMLSelectElement).value === 'true',
-            day: day // Use the 'day' parameter received here
+            day: this.selectedDay
         };
 
         this.exerciseService.postExercise(exerciseData).subscribe(
@@ -57,7 +59,6 @@ export class AppComponent {
         );
     }
 
-    // Function to retrieve all exercises
     getExercises(): void {
         this.exerciseService.getExercises().subscribe(
             (resp) => {
@@ -70,7 +71,6 @@ export class AppComponent {
         );
     }
 
-    // Function to delete an exercise
     deleteExercise(exercise: any): void {
         this.exerciseService.deleteExercise(exercise.id).subscribe(
             () => {
