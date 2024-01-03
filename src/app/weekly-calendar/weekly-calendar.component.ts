@@ -9,6 +9,7 @@ import { ExerciseService } from '../exercise.service';
 export class WeeklyCalendarComponent {
 
     constructor(private exerciseService: ExerciseService) { }
+    selectedExercise: any = null;
 
     days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -55,5 +56,15 @@ export class WeeklyCalendarComponent {
     deleteExercise(exercise: any) {
         console.log('Delete clicked for exercise:', exercise);
     }
+
+    openEditExercisePopup(exercise: any): void {
+        this.selectedExercise = exercise;
+        const editPopup = document.getElementById('editExercisePopup');
+        if (editPopup) {
+            editPopup.style.display = 'block';
+        }
+    }
+
+
 
 }

@@ -31,7 +31,7 @@
                             
                                 <!-- Edit and Delete buttons -->
                                 <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button (click)="editExercise(exercise)">Edit</button>
+                                    <button (click)="openEditExercisePopup(exercise)">Edit</button>
                                     <button (click)="deleteExercise(exercise)">Delete</button>
                                 </div>
                             </div>

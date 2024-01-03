@@ -39,3 +39,41 @@
         </div>
     </div>
 </div>
+
+<div class="modal" tabindex="-1" role="dialog" id="editExercisePopup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Exercise</h5>
+                <button type="button" class="close" aria-label="Close" (click)="closeEditExercisePopup()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--ToDo:Change this-->
+                <form (submit)="createExercise()">
+                    <div class="form-group">
+                        <label for="exerciseName">Name</label>
+                        <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseRepetitions">Repetitions</label>
+                        <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseWeight">Weight</label>
+                        <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight">
+                    </div>
+                    <div class="form-group">
+                        <label for="exerciseMachine">Machine</label>
+                        <select class="form-control" id="exerciseMachine">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

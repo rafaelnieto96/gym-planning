@@ -99,6 +99,11 @@ export class AppComponent {
     }
 
 
-
+    closeEditExercisePopup(): void {
+        const editPopup = document.getElementById('editExercisePopup');
+        if (editPopup) {
+            editPopup.style.display = 'none';
+        }
+    }
 
 }
