@@ -48,7 +48,7 @@ body {
 h3 {
     font-size: 37px;
     font-weight: 900;
-    margin: 0 0 1rem;
+    margin: 0 0 2rem;
 }
 
 
@@ -172,3 +172,16 @@ h3 {
     background-color: #ff4d4d;
 }
 
+.delete-all-btn button {
+    padding: 8px 16px;
+    background-color: #b22b2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-all-btn button:hover {
+    background-color: #ff4d4d;
+}
