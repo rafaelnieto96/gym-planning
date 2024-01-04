@@ -22,8 +22,7 @@
                 <!-- Monday -->
                 <div class="day-content">
                     <div class="square" (click)="handleSquareClick($event, 'Monday')">
-                        <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise">
-                            <div class="exercise-details" (click)="toggleExerciseButtons(exercise)">
+                        <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise" (click)="toggleExerciseButtons(exercise)">
                                 <!-- Exercise details -->
                                 <div class="name">{{ exercise.name }}</div>
                                 <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
@@ -33,7 +32,6 @@
                                 <div class="exercise-buttons" *ngIf="exercise.showButtons">
                                     <button (click)="openEditExercisePopup(exercise)">Edit</button>
                                     <button (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
                             </div>
                         </div>
                     </div>
