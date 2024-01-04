@@ -33,7 +33,6 @@ export class WeeklyCalendarComponent {
     }
 
     deleteAllExercises(): void {
-        this.exercises = [];
         this.exerciseService.deleteAllExercises().subscribe(
             () => {
                 console.log('All exercises deleted successfully.');
@@ -42,6 +41,7 @@ export class WeeklyCalendarComponent {
                 console.error('Error deleting exercises:', error);
             }
         );
+        window.location.reload();
     }
 
     toggleExerciseButtons(exercise: any) {
@@ -54,12 +54,18 @@ export class WeeklyCalendarComponent {
         });
     }
 
-    editExercise(exercise: any) {
-        console.log('Edit clicked for exercise:', exercise);
-    }
+    deleteExercise(id: any): void {
+        this.exerciseService.deleteExercise(id).subscribe(
+            () => {
+                console.log('Exercise deleted');
 
-    deleteExercise(exercise: any) {
-        console.log('Delete clicked for exercise:', exercise);
+            },
+            (err) => {
+                console.error('Error deleting exercise:', err);
+
+            }
+        );
+        window.location.reload();
     }
 
 }

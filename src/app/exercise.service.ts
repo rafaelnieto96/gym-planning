@@ -19,11 +19,11 @@ export class ExerciseService {
     }
 
     public deleteExercise(id: any) {
-        return this.http.delete(this.apiUrl + '/?id=' + id);
+        return this.http.delete(this.apiUrl + '/' + id);
     }
 
     public updateExercise(id: any, exercise: any) {
-        return this.http.put(this.apiUrl + '/?id=' + id, exercise);
+        return this.http.put(this.apiUrl + '/' + id, exercise);
     }
 
     public deleteAllExercises() {

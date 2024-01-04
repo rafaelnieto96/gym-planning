@@ -11,13 +11,6 @@ export class AppComponent {
     selectedExercise: any = '';
 
     exerciseDetails: any = null;
-    exerciseToUpdate = {
-        id: '',
-        name: '',
-        weight: '',
-        repetitions: '',
-        machine: ''
-    };
 
     constructor(private exerciseService: ExerciseService) {
         this.getExercises();
@@ -51,8 +44,8 @@ export class AppComponent {
         this.exerciseService.postExercise(exerciseData).subscribe(
             (resp) => {
                 console.log('Exercise created:', resp);
-                this.getExercises(); // Update the exercise list after a successful creation
-                this.closeExamplePopup(); // Close the modal after creating the exercise
+                this.getExercises();
+                this.closeExamplePopup();
             },
             (err) => {
                 console.error('Error creating exercise:', err);
@@ -68,6 +61,18 @@ export class AppComponent {
         }
     }
 
+    updateExercise(): void {
+        this.exerciseService.updateExercise(this.selectedExercise.id, this.selectedExercise).subscribe(
+            (resp) => {
+                console.log('Exercise updated:', resp);
+                this.closeEditExercisePopup();
+            },
+            (err) => {
+                console.error('Error updating exercise:', err);
+            }
+        );
+    }
+
     getExercises(): void {
         this.exerciseService.getExercises().subscribe(
             (resp) => {
@@ -79,34 +84,6 @@ export class AppComponent {
             }
         );
     }
-
-    deleteExercise(exercise: any): void {
-        this.exerciseService.deleteExercise(exercise.id).subscribe(
-            () => {
-                console.log('Exercise deleted');
-                this.getExercises(); // Refresh the exercise list after deletion
-            },
-            (err) => {
-                console.error('Error deleting exercise:', err);
-            }
-        );
-    }
-
-    edit(exercise: any): void {
-        this.exerciseToUpdate = exercise;
-    }
-
-    updateExercise(): void {
-        this.exerciseService.updateExercise(this.exerciseToUpdate.id, this.exerciseToUpdate).subscribe(
-            (resp) => {
-                console.log('Exercise updated:', resp);
-            },
-            (err) => {
-                console.error('Error updating exercise:', err);
-            }
-        );
-    }
-
 
     closeEditExercisePopup(): void {
         const editPopup = document.getElementById('editExercisePopup');
