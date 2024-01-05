@@ -24,19 +24,17 @@
                     <div class="square" (click)="handleSquareClick($event, 'Monday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <!-- Exercise details -->
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
+
                         </div>
                     </div>
 
@@ -44,17 +42,16 @@
                     <div class="square" (click)="handleSquareClick($event, 'Tuesday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Tuesday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -63,17 +60,15 @@
                     <div class="square" (click)="handleSquareClick($event, 'Wednesday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Wednesday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -82,17 +77,15 @@
                     <div class="square" (click)="handleSquareClick($event, 'Thursday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Thursday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -101,17 +94,15 @@
                     <div class="square" (click)="handleSquareClick($event, 'Friday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Friday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -120,17 +111,15 @@
                     <div class="square" (click)="handleSquareClick($event, 'Saturday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Saturday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -139,17 +128,15 @@
                     <div class="square" (click)="handleSquareClick($event, 'Sunday')">
                         <div *ngFor="let exercise of exercises | dayFilter: 'Sunday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
-                            <div class="exercise-details">
-                                <div class="name">{{ exercise.name }}</div>
-                                <div class="repetitions">Reps: {{ exercise.repetitions }}</div>
-                                <div class="weight">Weight: {{ exercise.weight }}</div>
+                            <h2>{{ exercise.name }}</h2>
+                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
+                            <p class='description'>Weight: {{ exercise.weight }}</p>
 
-                                <!-- Edit and Delete buttons -->
-                                <div class="exercise-buttons" *ngIf="exercise.showButtons">
-                                    <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
-                                    <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
-                                </div>
-
+                            <hr />
+                            <!-- Edit and Delete buttons -->
+                            <div class="exercise-buttons" *ngIf="exercise.showButtons">
+                                <button class="edit-btn" (click)="openEditExercisePopup(exercise)">Edit</button>
+                                <button class="delete-btn" (click)="deleteExercise(exercise.id)">Delete</button>
                             </div>
                         </div>
                     </div>
