@@ -1,5 +1,6 @@
 <div class="content" role="main">
-    <app-weekly-calendar (squareClicked)="openExamplePopup($event)" (exerciseClicked)="openEditExercisePopup($event)" [exercises]="exerciseDetails"></app-weekly-calendar>
+    <app-weekly-calendar (squareClicked)="openExamplePopup($event)" (exerciseClicked)="openEditExercisePopup($event)"
+        [exercises]="exerciseDetails"></app-weekly-calendar>
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="examplePopup">
@@ -19,19 +20,17 @@
                         <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name">
                     </div>
                     <div class="form-group">
+                        <label for="exerciseSeries">Series</label>
+                        <input type="number" class="form-control" id="exerciseSeries" placeholder="Series"
+                            [(ngModel)]="selectedExercise.series" name="exerciseSeries">
+                    </div>
+                    <div class="form-group">
                         <label for="exerciseRepetitions">Repetitions</label>
                         <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions">
                     </div>
                     <div class="form-group">
                         <label for="exerciseWeight">Weight</label>
                         <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight">
-                    </div>
-                    <div class="form-group">
-                        <label for="exerciseMachine">Machine</label>
-                        <select class="form-control" id="exerciseMachine">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                 </form>
@@ -56,6 +55,11 @@
                             [(ngModel)]="selectedExercise.name" name="exerciseName">
                     </div>
                     <div class="form-group">
+                        <label for="exerciseSeries">Series</label>
+                        <input type="number" class="form-control" id="exerciseSeries" placeholder="Series"
+                            [(ngModel)]="selectedExercise.series" name="exerciseSeries">
+                    </div>
+                    <div class="form-group">
                         <label for="exerciseRepetitions">Repetitions</label>
                         <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions"
                             [(ngModel)]="selectedExercise.repetitions" name="exerciseRepetitions">
@@ -64,14 +68,6 @@
                         <label for="exerciseWeight">Weight</label>
                         <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight"
                             [(ngModel)]="selectedExercise.weight" name="exerciseWeight">
-                    </div>
-                    <div class="form-group">
-                        <label for="exerciseMachine">Machine</label>
-                        <select class="form-control" id="exerciseMachine" [(ngModel)]="selectedExercise.machine"
-                            name="exerciseMachine">
-                            <option [ngValue]="true">Yes</option>
-                            <option [ngValue]="false">No</option>
-                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Confirm</button>
                 </form>

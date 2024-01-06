@@ -25,8 +25,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Monday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -44,8 +45,9 @@
                             (click)="toggleExerciseButtons(exercise)">
 
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -61,8 +63,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Wednesday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -78,8 +81,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Thursday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -95,8 +99,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Friday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -112,8 +117,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Saturday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
@@ -129,8 +135,9 @@
                         <div *ngFor="let exercise of exercises | dayFilter: 'Sunday'" class="exercise"
                             (click)="toggleExerciseButtons(exercise)">
                             <h2>{{ exercise.name }}</h2>
-                            <p class='description'>Reps: {{ exercise.repetitions }}</p>
-                            <p class='description'>Weight: {{ exercise.weight }}</p>
+                            <div class='description'>Series: {{ exercise.series }}</div>
+                            <div class='description'>Repetitions: {{ exercise.repetitions }}</div>
+                            <div class='description'>Weight: {{ exercise.weight }}</div>
 
                             <hr />
                             <!-- Edit and Delete buttons -->
