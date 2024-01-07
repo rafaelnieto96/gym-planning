@@ -6,37 +6,51 @@
 <div class="modal" tabindex="-1" role="dialog" id="examplePopup">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Create Exercise</h5>
-                <button type="button" class="close" aria-label="Close" (click)="closeExamplePopup()">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!--ToDo:Change this-->
-                <form (submit)="createExercise()">
-                    <div class="form-group">
-                        <label for="exerciseName">Name</label>
-                        <input type="text" class="form-control" id="exerciseName" placeholder="Exercise Name">
+            <div class="form-body">
+                <div class="row">
+                    <div class="form-holder">
+                        <div class="form-content">
+                            <div class="form-items">
+                                <button type="button" class="close-btn" aria-label="Close"
+                                    (click)="closeExamplePopup()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h3>Create Exercise</h3>
+                                <form (submit)="createExercise()">
+
+                                    <input type="text" class="form-control" id="exerciseName"
+                                        placeholder="Exercise Name" required>
+                                    <div class="valid-feedback">Username field is valid!</div>
+                                    <div class="invalid-feedback">Username field cannot be blank!</div>
+
+                                    <input type="number" class="form-control" id="exerciseSeries" placeholder="Series"
+                                        required>
+                                    <div class="valid-feedback">Series field is valid!</div>
+                                    <div class="invalid-feedback">Series field cannot be blank!</div>
+
+                                    <input type="number" class="form-control" id="exerciseRepetitions"
+                                        placeholder="Repetitions" required>
+                                    <div class="valid-feedback">Repetitions field is valid!</div>
+                                    <div class="invalid-feedback">Repetitions field cannot be blank!</div>
+
+                                    <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight"
+                                        required>
+                                    <div class="valid-feedback">Weight field is valid!</div>
+                                    <div class="invalid-feedback">Weight field cannot be blank!</div>
+
+                                    <div class="form-button mt-3">
+                                        <button id="submit" type="submit" class="btn btn-primary">Create</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exerciseSeries">Series</label>
-                        <input type="number" class="form-control" id="exerciseSeries" placeholder="Series">
-                    </div>
-                    <div class="form-group">
-                        <label for="exerciseRepetitions">Repetitions</label>
-                        <input type="number" class="form-control" id="exerciseRepetitions" placeholder="Repetitions">
-                    </div>
-                    <div class="form-group">
-                        <label for="exerciseWeight">Weight</label>
-                        <input type="number" class="form-control" id="exerciseWeight" placeholder="Weight">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="modal" tabindex="-1" role="dialog" id="editExercisePopup">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

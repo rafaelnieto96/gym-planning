@@ -35,9 +35,9 @@ export class AppComponent {
         console.log('event:', event);
         const exerciseData = {
             name: (document.getElementById('exerciseName') as HTMLInputElement).value,
+            series: parseInt((document.getElementById('exerciseSeries') as HTMLInputElement).value, 10),
             repetitions: parseInt((document.getElementById('exerciseRepetitions') as HTMLInputElement).value, 10),
             weight: parseFloat((document.getElementById('exerciseWeight') as HTMLInputElement).value),
-            machine: (document.getElementById('exerciseMachine') as HTMLSelectElement).value === 'true',
             day: this.selectedDay
         };
 
