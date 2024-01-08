@@ -9,7 +9,7 @@
         <div id="calendar">
             <div class="placeholder"></div>
             <div class="calendar-events">
-                <div class="day-title">
+                <div class="day-title" #dayTitle (scroll)="onScroll($event)">
                     <div class="day">Monday<button class="plus-btn"
                         (click)="handleSquareClick($event, 'Monday')">+</button></div>
                     <div class="day">Tuesday<button class="plus-btn"
@@ -26,7 +26,7 @@
                             (click)="handleSquareClick($event, 'Sunday')">+</button>
                     </div>
                 </div>
-                <div class="day-content">
+                <div class="day-content" #dayContent (scroll)="onScroll($event)">
 
                     <!-- Monday -->
                     <div class="square" (click)="handleSquareClick($event, 'Monday')">

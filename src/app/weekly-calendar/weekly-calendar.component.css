@@ -18,6 +18,7 @@ body {
 }
 
 .calendar-container {
+    max-width: 90%;
     height: 100vh;
     background: #1D252C;
     padding: 40px 60px;
@@ -27,17 +28,24 @@ body {
 .day-title,
 .day-content {
     display: flex;
+    overflow-y: auto;
 }
 
 .day {
     font-size: 1.2rem;
-    width: 220px;
+    min-width: 220px;
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
 }
 
+.day-container {
+    display: flex;
+    overflow-x: auto;
+}
+
 .square {
+    min-width: 220px;
     width: 220px;
     position: relative;
 }
@@ -57,16 +65,14 @@ body {
 h3 {
     font-size: 37px;
     font-weight: 900;
-    margin: 0 0 2rem;
 }
 
 
 .header {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    margin: 0 0 2rem;
     align-items: center;
-    text-align: center;
 }
 
 .delete-all-btn {
@@ -146,7 +152,6 @@ h3 {
     background-attachment: fixed;
     background-size: cover;
     height: 80vh;
-    overflow-y: auto;
 }
 
 
@@ -155,7 +160,7 @@ h3 {
     flex-direction: column;
     padding: 1rem;
     user-select: none;
-    max-width: 300px;
+    width: 220px;
     margin: 5px;
     border: 1px solid #ffffff22;
     background: linear-gradient(0deg, rgba(40, 44, 52, 0.7) 0%, rgba(17, 0, 32, 0.3) 100%);
@@ -215,6 +220,8 @@ h3 {
 }
 
 .day {
+    overflow-x: auto;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,4 +244,14 @@ h3 {
 
 .day:hover .plus-btn {
     opacity: 1;
+}
+
+
+.day-title::-webkit-scrollbar {
+    display: none;
+}
+
+.day-title {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }

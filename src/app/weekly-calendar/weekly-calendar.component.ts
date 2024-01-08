@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ViewChild, HostListener, ElementRef } from '@angular/core';
 import { ExerciseService } from '../exercise.service';
 
 @Component({
@@ -17,6 +17,21 @@ export class WeeklyCalendarComponent {
 
     @Output() squareClicked: EventEmitter<any> = new EventEmitter();
     @Output() exerciseClicked: EventEmitter<any> = new EventEmitter();
+
+    @ViewChild('dayTitle') dayTitle!: ElementRef;
+    @ViewChild('dayContent') dayContent!: ElementRef;
+
+    @HostListener('scroll', ['$event'])
+    onScroll(event: Event): void {
+        const element = event.target as HTMLElement;
+        if (element && element.classList) {
+            if (element.classList.contains('day-content')) {
+                this.dayTitle.nativeElement.scrollLeft = element.scrollLeft;
+            } else if (element.classList.contains('day-title')) {
+                this.dayContent.nativeElement.scrollLeft = element.scrollLeft;
+            }
+        }
+    }
 
     handleSquareClick(event: MouseEvent, day: string) {
         if ((event.target as HTMLElement).classList.contains('square') || (event.target as HTMLElement).classList.contains('plus-btn')) {
