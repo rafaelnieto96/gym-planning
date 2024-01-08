@@ -10,13 +10,21 @@
             <div class="placeholder"></div>
             <div class="calendar-events">
                 <div class="day-title">
-                    <div class="day">Monday</div>
-                    <div class="day">Tuesday</div>
-                    <div class="day">Wednesday</div>
-                    <div class="day">Thursday</div>
-                    <div class="day">Friday</div>
-                    <div class="day">Saturday</div>
-                    <div class="day">Sunday</div>
+                    <div class="day">Monday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Monday')">+</button></div>
+                    <div class="day">Tuesday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Tuesday')">+</button></div>
+                    <div class="day">Wednesday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Wednesday')">+</button></div>
+                    <div class="day">Thursday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Thursday')">+</button></div>
+                    <div class="day">Friday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Friday')">+</button></div>
+                    <div class="day">Saturday<button class="plus-btn"
+                        (click)="handleSquareClick($event, 'Saturday')">+</button></div>
+                    <div class="day">Sunday <button class="plus-btn"
+                            (click)="handleSquareClick($event, 'Sunday')">+</button>
+                    </div>
                 </div>
                 <div class="day-content">
 

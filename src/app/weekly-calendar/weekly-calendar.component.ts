@@ -19,7 +19,7 @@ export class WeeklyCalendarComponent {
     @Output() exerciseClicked: EventEmitter<any> = new EventEmitter();
 
     handleSquareClick(event: MouseEvent, day: string) {
-        if ((event.target as HTMLElement).classList.contains('square')) {
+        if ((event.target as HTMLElement).classList.contains('square') || (event.target as HTMLElement).classList.contains('plus-btn')) {
             this.openPopupOnClick(day);
         }
     }
@@ -39,9 +39,11 @@ export class WeeklyCalendarComponent {
             },
             (error) => {
                 console.error('Error deleting exercises:', error);
+            },
+            () => {
+                window.location.reload();
             }
         );
-        window.location.reload();
     }
 
     toggleExerciseButtons(exercise: any) {
@@ -58,14 +60,14 @@ export class WeeklyCalendarComponent {
         this.exerciseService.deleteExercise(id).subscribe(
             () => {
                 console.log('Exercise deleted');
-
             },
             (err) => {
                 console.error('Error deleting exercise:', err);
-
+            },
+            () => {
+                window.location.reload();
             }
         );
-        window.location.reload();
     }
 
 }

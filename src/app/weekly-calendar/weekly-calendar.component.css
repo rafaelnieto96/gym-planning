@@ -2,13 +2,12 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    color:#eee;
+    color: #eee;
 }
 
 body {
     padding: 0;
     margin: 0;
-    
 }
 
 .calendar-background {
@@ -92,8 +91,8 @@ h3 {
 }
 
 .exercise-buttons button {
-    width: 60px;
-    height: 26px;
+    width: 65px;
+    height: 30px;
     color: #fff;
     border: none;
     padding: 0;
@@ -107,10 +106,12 @@ h3 {
 }
 
 .exercise-buttons button.edit-btn {
+    outline: none;
     background-color: #576875;
 }
 
 .exercise-buttons button.delete-btn {
+    outline: none;
     background-color: #8c2b2b;
 }
 
@@ -123,6 +124,7 @@ h3 {
 }
 
 .delete-all-btn button {
+    outline: none;
     font-size: 1.1rem;
     padding: 8px 16px;
     background-color: #b22b2b;
@@ -148,15 +150,11 @@ h3 {
 }
 
 
-.exercise{
-    /* ToDo:control it */
-    /* min-height: 120px; */
-
+.exercise {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    
-    user-select:none;
+    user-select: none;
     max-width: 300px;
     margin: 5px;
     border: 1px solid #ffffff22;
@@ -169,45 +167,74 @@ h3 {
     transition: .5s all;
 
     overflow: hidden;
-    h2{
+
+    h2 {
         height: 40px;
         font-size: 1.1rem;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    hr{
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #88888855;
-      margin-top: 12px;
+
+    hr {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #88888855;
+        margin-top: 8px;
     }
-      .description{
-    white-space: nowrap;
+
+    .description {
+        white-space: nowrap;
         color: #a89ec9;
         overflow: hidden;
         text-overflow: ellipsis;
-      }
-      
-    ::before{
-      position: fixed;
-      content: "";
-      box-shadow: 0 0 100px 40px #ffffff08;
-      top: -10%;
-      left: -100%;
-      transform: rotate(-45deg);
-      height: 60rem;
-      transition: .7s all;
     }
-    &:hover{
-      border: 1px solid #ffffff44;
-      box-shadow: 0 7px 50px 10px #000000aa;
-      transform: scale(1.015);
-      filter: brightness(1.3);
-      ::before{
-        filter: brightness(.5);
-        top: -400%;
-        left: 210%;
-      }
-    }
-  }
 
+    ::before {
+        position: fixed;
+        content: "";
+        box-shadow: 0 0 100px 40px #ffffff08;
+        top: -10%;
+        left: -100%;
+        transform: rotate(-45deg);
+        height: 60rem;
+        transition: .7s all;
+    }
+
+    &:hover {
+        border: 1px solid #ffffff44;
+        box-shadow: 0 7px 50px 10px #000000aa;
+        transform: scale(1.015);
+        filter: brightness(1.3);
+
+        ::before {
+            filter: brightness(.5);
+            top: -400%;
+            left: 210%;
+        }
+    }
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-right: 20px;
+}
+
+.day .plus-btn {
+    opacity: 0;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    right: 15px;
+    outline: none;
+}
+
+.day:hover .plus-btn {
+    opacity: 1;
+}
